@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- 搜索组件 -->
+    <view class="search" bindtap="search">
+        <navigator open-type="navigateBack">返回</navigator>
+    </view>
+    <!-- 搜索结果展示组件 -->
+    <view class="container-list">
+        <navigator class="list" wx:key wx:for="{{searchResult}}" data-id="{{item.al.id}}" href="/detail?id={{item.al.id}}">
+            <span>{{index}}: {{item.name}}</span>
+            <image src="{{item.al.picUrl}}" alt=""/>
+        </navigator>
+    </view>
+</view>

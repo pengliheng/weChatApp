@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/index"
+  ],
+  "window":{
+    "backgroundColor":"blue",
+    "backgroundTextStyle":"blue",
+    "navigationBarBackgroundColor": "#f7412d",
+    "navigationBarTitleText": "网易云 - 小程序",
+    "navigationBarTextStyle":"white"
+  }
+}
