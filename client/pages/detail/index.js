@@ -5,27 +5,51 @@ var util = require('../../utils/util.js')
 
 
 Page({
-    data: {
-        searchResult: {},
-        logged: false,
-        takeSession: false,
-        requestResult: ''
-    },
-    bindinputFunc: function(e) {
-        console.log(e.detail.value);
+    data: {},
+    onLoad: function(options) {
+        this.setData({
+            name: options.name,
+            author: options.author,
+            image: options.image
+        })
         util.fly({
             url: "https://api.imjad.cn/cloudmusic",
             method: "GET",
             data: {
-                type: "search",
-                search_type: "1",
-                s: e.detail.value
+                type: "song",
+                id: options.id,
+                br: 128000
             }
         }).then(json =>{
             this.setData({
-                searchResult: json.result.songs
+                song: json.data[0].url
             })
-            console.log(json.result.songs);
-        })        
+        })
+        util.fly({
+            url: "https://api.imjad.cn/cloudmusic",
+            method: "GET",
+            data: {
+                type: "detail",
+                id: options.id,
+                br: 128000
+            }
+        }).then(json =>{
+            this.setData({
+                image: json.songs[0].al.picUrl
+            })
+        })
+        util.fly({
+            url: "https://api.imjad.cn/cloudmusic",
+            method: "GET",
+            data: {
+                type: "detail",
+                id: options.id,
+                br: 128000
+            }
+        }).then(json =>{
+            this.setData({
+                image: json.songs[0].al.picUrl
+            })
+        })
     }
 })

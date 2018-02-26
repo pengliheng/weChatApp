@@ -6,9 +6,10 @@
     </view>
     <!-- 搜索结果展示组件 -->
     <view class="container-list">
-        <navigator class="list" wx:key wx:for="{{searchResult}}" data-id="{{item.al.id}}" href="/detail?id={{item.al.id}}">
-            <span>{{index}}: {{item.name}}</span>
-            <image src="{{item.al.picUrl}}" alt=""/>
-        </navigator>
+        <audio poster="{{image}}" name="{{name}}" author="{{author}}" src="{{song}}" id="myAudio" controls loop></audio>
+        <view class="list" wx:key >
+            <span>{{name}}</span>
+            <image src="{{image}}" alt=""/>
+        </view>
     </view>
 </view>

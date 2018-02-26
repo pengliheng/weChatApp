@@ -8,7 +8,10 @@
     </view>
     <!-- 搜索结果展示组件 -->
     <view class="container-list">
-        <navigator class="list" wx:key wx:for="{{searchResult}}" data-id="{{item.al.id}}" href="/detail?id={{item.al.id}}">
+        <navigator 
+            class="list" wx:key 
+            wx:for="{{searchResult}}" 
+            url="/pages/detail/index?id={{item.id}}&name={{item.name}}&image={{item.al.picUrl}}&author={{item.ar[0].name}}">
             <span>{{index}}: {{item.name}}</span>
             <image src="{{item.al.picUrl}}" alt=""/>
         </navigator>
