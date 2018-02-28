@@ -42,13 +42,12 @@ Page({
             url: "https://api.imjad.cn/cloudmusic",
             method: "GET",
             data: {
-                type: "detail",
-                id: options.id,
-                br: 128000
+                type: "lrc",
+                id: options.id
             }
         }).then(json =>{
             this.setData({
-                image: json.songs[0].al.picUrl
+                lyric: json.songs[0].al.picUrl
             })
         })
     }

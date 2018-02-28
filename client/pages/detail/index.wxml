@@ -1,15 +1,18 @@
 <!--index.wxml-->
 <view class="container">
     <!-- 搜索组件 -->
-    <view class="search" bindtap="search">
+    <view class="navigator">
         <navigator open-type="navigateBack">返回</navigator>
+        <navigator open-type="navigateBack">分享</navigator>
     </view>
-    <!-- 搜索结果展示组件 -->
-    <view class="container-list">
+    <!-- 歌词组件 -->
+    <view class="lrc">
         <audio poster="{{image}}" name="{{name}}" author="{{author}}" src="{{song}}" id="myAudio" controls loop></audio>
-        <view class="list" wx:key >
-            <span>{{name}}</span>
-            <image src="{{image}}" alt=""/>
-        </view>
+    </view>
+    <!-- 播放组件 -->
+    <view class="audio">
+        <au
+        
+        dio poster="{{image}}" name="{{name}}" author="{{author}}" src="{{song}}" id="myAudio" controls loop></audio>
     </view>
 </view>
