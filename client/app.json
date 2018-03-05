@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/detail/index"
+    "pages/detail/index",
+    "pages/user/index"
   ],
   "window":{
     "backgroundColor":"blue",

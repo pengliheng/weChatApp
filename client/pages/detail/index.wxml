@@ -7,12 +7,26 @@
     </view>
     <!-- 歌词组件 -->
     <view class="lrc">
-        <audio poster="{{image}}" name="{{name}}" author="{{author}}" src="{{song}}" id="myAudio" controls loop></audio>
+        <p wx:for="{{lyric}}">
+            {{item.word}}
+        </p>
     </view>
     <!-- 播放组件 -->
     <view class="audio">
-        <au
-        
-        dio poster="{{image}}" name="{{name}}" author="{{author}}" src="{{song}}" id="myAudio" controls loop></audio>
+        <audio poster="{{image}}" name="{{name}}" author="{{author}}" src="{{song}}" id="myAudio" controls loop></audio>
+    </view>
+    <!-- 评论组件 -->
+    <view class="comments">
+        <div class="list" wx:for="{{comments}}">
+            <navigator 
+                class="avatar"
+                url="/pages/user/index?id={{item.user.userId}}&name={{item.user.nickname}}&image={{item.user.avatarUrl}}">
+                <image src="{{item.user.avatarUrl}}" alt="头像"/>
+                {{item.user.nickname}}
+            </navigator>
+            <span class="comment">
+                {{item.content}}
+            </span>
+        </div>
     </view>
 </view>

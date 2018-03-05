@@ -6,7 +6,7 @@ page {
     justify-content: flex-start;
 }
 
-.search {
+.navigator {
     width: 90vw;
     margin: 10px;
     height: 30px;
@@ -14,36 +14,64 @@ page {
     border-radius: 20px;
     flex-direction: row;
     display: inline-flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: rgb(235, 236, 236);
+    padding: 0px 15px;
+    font-size: 15px;
+    font-weight:bolder;
 }
 
-.search input {
-    /* width: 80%; */
+.lrc {
+    display: inline-flex;
+    flex-direction: column;
+    font-size:12px;
+    text-align:center;
 }
 
-.container-list {
+.comments {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.comments {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgb(235, 236, 236);
 }
 
-.container-list .list {
+.comments .list {
     width: 100vw;
-    height: 66px;
-    align-items: center;
+    min-height: 66px;
+    /* align-items: center; */
     flex-direction: row;
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     background-color: #fff;
     margin-bottom: 5px;
     padding: 10px;
     box-sizing: border-box;
 }
-.container-list .list image{
+
+.comments .list .avatar {
+    width: 20%;
+    height: 100%;
+    font-size:11px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.comments .list .avatar image {
     height: 60px;
     width: 60px;
     border-radius: 10px;
     flex: 0 0 60px;
+}
+
+.comments .list .comment {
+    font-size: 14px;
 }

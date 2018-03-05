@@ -1,0 +1,23 @@
+/**index.wxss**/
+page {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.navigator {
+    width: 90vw;
+    margin: 10px;
+    height: 30px;
+    align-items: center;
+    border-radius: 20px;
+    flex-direction: row;
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: rgb(235, 236, 236);
+    padding: 0px 15px;
+    font-size: 15px;
+    font-weight:bolder;
+}

@@ -42,12 +42,32 @@ Page({
             url: "https://api.imjad.cn/cloudmusic",
             method: "GET",
             data: {
-                type: "lrc",
+                type: "lyric",
                 id: options.id
             }
         }).then(json =>{
+            const lyricArr = json.lrc.lyric.split('\n').map(arr=>{
+                return {
+                    time: arr.split(']')[0].replace('[',''),
+                    word: arr.match(/([^\]]+)$/g) ? arr.match(/([^\]]+)$/g)[0] : ''
+                }
+            });
+            console.log(lyricArr);
             this.setData({
-                lyric: json.songs[0].al.picUrl
+                lyric: lyricArr
+            })
+        })
+        util.fly({
+            url: "https://api.imjad.cn/cloudmusic",
+            method: "GET",
+            data: {
+                type: "comments",
+                id: options.id
+            }
+        }).then(json =>{
+            console.log(json.hotComments);
+            this.setData({
+                comments: json.hotComments
             })
         })
     }

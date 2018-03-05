@@ -3,7 +3,7 @@
     <!-- 搜索组件 -->
     <view class="search" bindtap="search">
         <icon type="search" size="16"/>
-        <input type="text" bindblur="bindinputFunc"/>
+        <input type="text" bindblur="bindinputFunc" value="my little airport"/>
         <icon type="clear" size="16"/>
     </view>
     <!-- 搜索结果展示组件 -->
@@ -12,7 +12,7 @@
             class="list" wx:key 
             wx:for="{{searchResult}}" 
             url="/pages/detail/index?id={{item.id}}&name={{item.name}}&image={{item.al.picUrl}}&author={{item.ar[0].name}}">
-            <span>{{index}}: {{item.name}}</span>
+            <span>{{item.name}}</span>
             <image src="{{item.al.picUrl}}" alt=""/>
         </navigator>
     </view>
